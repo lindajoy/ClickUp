@@ -11,16 +11,16 @@
   <!-- Type Column -->
   <ng-container matColumnDef="type">
     <mat-header-cell mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let location"> {{location.type}} </mat-cell>
+    <mat-cell mat-cell *matCellDef="let location"> {{ location.type }} </mat-cell>
   </ng-container>
 
   <!-- Dimension Column -->
   <ng-container matColumnDef="dimension">
     <mat-header-cell mat-header-cell *matHeaderCellDef> Dimension </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let location"> {{location.dimension}} </mat-cell>
+    <mat-cell mat-cell *matCellDef="let location"> {{ location.dimension }} </mat-cell>
   </ng-container>
 
-  <mat-header-row *matHeaderCellDef="['name', 'type', 'dimension']"></mat-header-row>
+  <mat-header-row *matHeaderRowDef="['name', 'type', 'dimension']"></mat-header-row>
   <mat-row *matRowDef="let row; columns: ['name', 'type', 'dimension']"></mat-row>
 </table>
 

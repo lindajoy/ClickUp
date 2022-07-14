@@ -36,10 +36,8 @@ export class TableViewComponent implements OnInit, AfterViewInit {
     this.subs.sink = this._dataService.getLocations()
                          .pipe(pluck('results'))
                             .subscribe((data) => {
-                                this.setData(data)
-                                
+                                this.setData(data);
                                 this.dataSource.data = data as RickMortyLocations[];
-
                           });
     
   }
