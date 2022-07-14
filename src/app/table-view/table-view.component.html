@@ -1,4 +1,9 @@
-
+<div>
+  <mat-form-field appearance="outline" id="tr-list-table-filter-field" fxFlex="30">
+    <input matInput (keyup)="applyFilter($event)" autocomplete="off" />
+    <span matSuffix><i class="fas fa-search color"></i>&nbsp;</span>
+  </mat-form-field>
+</div>
 <!-- <div fxLayout="column" class="key-selector-body"> -->
 <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
 

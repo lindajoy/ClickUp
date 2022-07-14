@@ -46,7 +46,8 @@ export class TableViewComponent implements OnInit, AfterViewInit, OnDestroy {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-  
+
+
   private setData(data: unknown)
   {
     this.dataSource.data = data as RickMortyLocations[]
