@@ -4,19 +4,19 @@
 
   <!-- Name Column -->
   <ng-container matColumnDef="name">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> Name of Location</mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header> Name of Location</mat-header-cell>
     <mat-cell mat-cell *matCellDef="let location"> {{ location.name }} </mat-cell>
   </ng-container>
 
   <!-- Type Column -->
   <ng-container matColumnDef="type">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let location"> {{ location.type }} </mat-cell>
   </ng-container>
 
   <!-- Dimension Column -->
   <ng-container matColumnDef="dimension">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> Dimension </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header> Dimension </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let location"> {{ location.dimension }} </mat-cell>
   </ng-container>
 
