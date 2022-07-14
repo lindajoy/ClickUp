@@ -1,0 +1,28 @@
+
+<!-- <div fxLayout="column" class="key-selector-body"> -->
+<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell mat-header-cell *mamat-header-celleaderCellDef> Name of Location</mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let location"> {{ location.name }} </mat-cell>
+  </ng-container>
+
+  <!-- Type Column -->
+  <ng-container matColumnDef="type">
+    <mat-header-cell mat-header-cell *mamat-header-celleaderCellDef> Name </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let location"> {{location.type}} </mat-cell>
+  </ng-container>
+
+  <!-- Dimension Column -->
+  <ng-container matColumnDef="dimension">
+    <mat-header-cell mat-header-cell *mamat-header-celleaderCellDef> Dimension </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let location"> {{location.dimension}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *mamat-header-celleaderRowDef="['name', 'type', 'dimension']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['name', 'type', 'dimension']"></mat-row>
+</table>
+
+<mat-paginator #subpaginator [pageSizeOptions]="[5, 10, 25, 50]" showFirstLastButtons></mat-paginator>
+<!-- </div> -->
