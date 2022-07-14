@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -13,7 +13,7 @@ import { RickMortyLocations } from '../shared/rick-morty-locations';
   templateUrl: './table-view.component.html',
   styleUrls: ['./table-view.component.scss']
 })
-export class TableViewComponent implements OnInit, AfterViewInit {
+export class TableViewComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // allows you to unsubscribe from observables gracefully!
   private subs = new SubSink();
@@ -57,5 +57,8 @@ export class TableViewComponent implements OnInit, AfterViewInit {
   {
     this.dataSource.filter = (evt.target as HTMLInputElement).value.trim().toLowerCase();
   }
+
+  ngOnDestroy = () => this.subs.unsubscribe();
+  
 
 }
