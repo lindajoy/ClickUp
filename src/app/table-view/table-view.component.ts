@@ -40,7 +40,6 @@ export class TableViewComponent implements OnInit, AfterViewInit {
                                 
                                 this.dataSource.data = data as RickMortyLocations[];
 
-                                console.log(this.dataSource.data);
                           });
     
   }
@@ -55,6 +54,7 @@ export class TableViewComponent implements OnInit, AfterViewInit {
     this.dataSource.data = data as RickMortyLocations[]
   }
   
+
   applyFilter(evt: Event)
   {
     this.dataSource.filter = (evt.target as HTMLInputElement).value.trim().toLowerCase();
