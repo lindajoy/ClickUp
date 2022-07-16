@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -57,6 +58,10 @@ export class TableViewComponent implements OnInit, AfterViewInit, OnDestroy {
   applyFilter(evt: Event)
   {
     this.dataSource.filter = (evt.target as HTMLInputElement).value.trim().toLowerCase();
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.dataSource.data, event.previousIndex, event.currentIndex);
   }
 
   ngOnDestroy = () => this.subs.unsubscribe();
